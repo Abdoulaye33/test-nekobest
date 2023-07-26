@@ -55,5 +55,9 @@ section {
 section div ul > li > img {
   width: 25%;
 }
+section div ul > li > a {
+  color: wheat;
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=style.css.map */

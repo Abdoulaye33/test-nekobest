@@ -57,5 +57,9 @@ section {
         & ul > li > img {
             width: 25%;
         }
+        & ul > li > a {
+            color: wheat;
+            text-decoration: underline;
+        }
     }
 }
