@@ -1,0 +1,59 @@
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ul > li {
+  list-style: none;
+}
+
+article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+article div > ul > li img {
+  width: 20%;
+}
+article div > ul > li a:last-child {
+  color: wheat;
+  text-decoration: underline;
+}
+article button {
+  margin: auto;
+  word-wrap: break-word;
+}
+
+section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+section div ul > li > img {
+  width: 25%;
+}
+
+/*# sourceMappingURL=style.css.map */

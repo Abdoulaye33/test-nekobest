@@ -1,32 +1,63 @@
-import React from "react";
-import api_url from "./api_url";
+import React, { useState, useEffect } from "react";
+import { api_url } from "./api_url";
+import "../scss/style.css";
 
 
- <article>
-</article> 
+function NekoBest() {
+  const [nekoData, setNekoData] = useState(null);
+  const [refresh, setRefresh] = useState(false);
 
-async function nekoBest() {
-  const response = await fetch(api_url);
-  const json = await response.json();
-  console.log(json.results);
+  const handleRefresh = () => {
+    setRefresh(!refresh);
+  };
 
-const user = data.results[0];
-let image = user.url;
-let artistName = user.artist_name;
-let artist = user.artist_href;
-let source = user.source_url;
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(api_url);
+      const json = await response.json();
+      setNekoData(json.results[0]);
+    }
 
-const article = document.querySelectorAll(article);
-    let imgs = document.createElement("img");
-    let paraGraphe = document.createElement("p");
-    let divs = document.createElement("div");
+    fetchData();
+  }, [refresh]);
 
-    article.append(divs);
-    divs.appendChild(imgs).src = image;
-    article.append(paraGraphe).textContent = artistName;
+  if (!nekoData) {
+    return <span className="loader"></span>;
+  }
 
+  const {
+    
+      url: image,
+      artist_name: artistName,
+      artist_href: artist,
+      source_url: source
+      
+      } = nekoData;
+
+  return (
+    <article>
+      <button onClick={handleRefresh}>Rafraichir</button>
+      <div>
+        <ul>
+          <li>
+            <h2>NekoBest</h2>
+          </li>
+          <li>
+            <img src={image} alt="Neko" />
+          </li>
+          <li>
+            <strong>Artist Name : {artistName}</strong>
+          </li>
+          <li>
+            <a href={artist}>Artist Social</a>
+          </li>
+          <li>
+            <a href={source}>Source</a>
+          </li>
+        </ul>
+      </div>
+    </article>
+  );
 }
 
-nekoBest();
-
-export default nekoBest;
+export default NekoBest;
