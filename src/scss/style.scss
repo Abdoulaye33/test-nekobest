@@ -44,7 +44,7 @@ article {
             text-decoration: underline;
         }
     }
-    & button {
+    & div > button {
         margin: auto;
         word-wrap: break-word;
     }

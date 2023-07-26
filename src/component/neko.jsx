@@ -36,8 +36,8 @@ function NekoBest() {
 
   return (
     <article>
-      <button onClick={handleRefresh}>Rafraichir</button>
       <div>
+        <button onClick={handleRefresh}>Rafraichir</button>
         <ul>
           <li>
             <h2>NekoBest</h2>

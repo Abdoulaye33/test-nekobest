@@ -42,7 +42,7 @@ article div > ul > li a:last-child {
   color: wheat;
   text-decoration: underline;
 }
-article button {
+article div > button {
   margin: auto;
   word-wrap: break-word;
 }
